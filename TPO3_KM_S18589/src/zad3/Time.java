@@ -38,11 +38,22 @@ public class Time {
 
                 if (days >= 1) {
                     returnString += " - kalendarzowo: ";
-                    if (p.getYears() >= 1)
-                        returnString += p.getYears() + " rok ";
-                    if (p.getMonths() >= 1)
-                        returnString += p.getMonths() + " miesiace ";
-                    returnString += p.getDays() + " dni";
+                    if (p.getYears() == 1)
+                        returnString += p.getYears() + " rok";
+                    if(p.getYears() > 1 && p.getYears() < 5)
+                        returnString += p.getYears() + " lata";
+                    if(p.getYears() > 5)
+                        returnString += p.getYears() + " lat";
+                    if (p.getMonths() == 1)
+                        returnString += ", " + p.getMonths() + " miesiac, ";
+                    if (p.getMonths() > 1 && p.getMonths() < 5)
+                        returnString += ", " + p.getMonths() + " miesiące, ";
+                    if (p.getMonths() > 5)
+                        returnString += ", " + p.getMonths() + " miesięcy, ";
+                    if (p.getDays() == 1)
+                        returnString += p.getDays() + " dzień ";
+                    if (p.getDays() > 1)
+                        returnString += p.getDays() + " dni ";
                 }
             } else {
                 LocalDate ld1 = LocalDate.parse(from);
@@ -58,11 +69,22 @@ public class Time {
                 returnString += " - mija: " + days + " dni, tygodni " + String.format("%.2f", weeks) + "\n";
                 if (days >= 1) {
                     returnString += " - kalendarzowo: ";
-                    if (p.getYears() >= 1)
-                        returnString += p.getYears() + " rok ";
-                    if (p.getMonths() >= 1)
-                        returnString += p.getMonths() + " miesiace ";
-                    returnString += p.getDays() + " dni";
+                    if (p.getYears() == 1)
+                        returnString += p.getYears() + " rok";
+                    if(p.getYears() > 1 && p.getYears() < 5)
+                        returnString += p.getYears() + " lata";
+                    if(p.getYears() > 5)
+                        returnString += p.getYears() + " lat";
+                    if (p.getMonths() == 1)
+                        returnString += ", " + p.getMonths() + " miesiac, ";
+                    if (p.getMonths() > 1 && p.getMonths() < 5)
+                        returnString += ", " + p.getMonths() + " miesiące, ";
+                    if (p.getMonths() > 5)
+                        returnString += ", " + p.getMonths() + " miesięcy, ";
+                    if (p.getDays() == 1)
+                        returnString += p.getDays() + " dzień ";
+                    if (p.getDays() > 1)
+                        returnString += p.getDays() + " dni ";
                 }
             }
         } catch (DateTimeParseException ex) {

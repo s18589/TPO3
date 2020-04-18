@@ -20,7 +20,7 @@ public class Tools {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        Map<String, Object> map = yaml.load(inputStream);
+        Map<String, Object> map = (Map)yaml.load(inputStream);
         return new Options(
                 (String) map.get("host"),
                 (int) map.get("port"),
